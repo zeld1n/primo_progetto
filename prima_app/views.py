@@ -24,3 +24,7 @@ def variabili(request):
 
 def index(request):
     return render(request,"prima_app/index.html")
+
+
+
+
