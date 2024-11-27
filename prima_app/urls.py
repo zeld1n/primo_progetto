@@ -7,7 +7,6 @@ from seconda_app.views import es_if,if_else_elif
 
 app_name="prima_app"
 urlpatterns=[
-    path("",index_root,name='index_root'),
     path('index',index,name='index'),
     path('homepage',homepage,name='homepage'),
     path('welcome',welcome,name='welcome'),
