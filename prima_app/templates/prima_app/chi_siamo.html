@@ -1,11 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chi siamo</title>
-</head>
-<body>
+{% extends 'primo_progetto\base.html' %}
+
+{%block title%} {{block.super}} | Chi siamo {%endblock title%}
+
+    {%block content%}
     <h1>Chi siamo</h1>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eget nisl dapibus, vestibulum nibh vel, congue magna. Etiam at ipsum et purus mattis pulvinar in in justo. Donec suscipit tincidunt scelerisque. Nunc finibus, ipsum et sollicitudin gravida, nisi ipsum venenatis eros, at consequat justo nisi et tellus. Aliquam pretium libero nec elit fringilla hendrerit. Quisque rutrum semper sem, a volutpat enim blandit vel. Sed ornare vel libero at tristique. Proin vel feugiat orci. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
@@ -16,5 +13,4 @@
         Curabitur gravida nunc vel mollis aliquam. Donec non eros maximus, finibus diam id, pretium metus. Proin sed efficitur orci, placerat euismod eros. Integer tristique, ligula eu tempus egestas, magna est luctus metus, quis feugiat urna metus at ex. Donec libero tortor, condimentum eget sodales non, ultricies non turpis. Nam sed lorem ut elit dictum viverra tempus non eros. Morbi dignissim at augue condimentum gravida.
         
         Nam commodo consectetur aliquam. Cras venenatis sollicitudin magna, nec pulvinar tortor dictum in. In non mattis nisl. Fusce molestie consectetur commodo. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Maecenas eu scelerisque lacus, id porta nulla. Donec elit mi, commodo a tempus vitae, venenatis in tortor. Praesent dignissim lectus convallis, sodales ex eget, venenatis sem. In et condimentum nulla.</p>
-</body>
-</html>
+    {%endblock content%}

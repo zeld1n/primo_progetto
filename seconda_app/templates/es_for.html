@@ -1,11 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ciclo for</title>
-</head>
-<body>
+{% extends 'primo_progetto\base.html' %}
+
+{%block title%} {{block.super}} | Ciclo for {%endblock title%}
+{%block content%}
     Cicla una sequenza usando <b>forloop.counter</b>
     <br/>
     {% for x in list2 %}
@@ -54,5 +50,4 @@
         {%endfor%}
     </ul>
 
-</body>
-</html>
+    {%endblock content%}
