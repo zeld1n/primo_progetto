@@ -1,3 +1,4 @@
+{% extends 'primo_progetto\base.html' %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,14 +7,16 @@
     <title>Index seconda app</title>
 </head>
 <body>
-    <ol>                       
-        
-        <li><a href="{% url 'seconda_app:es_if'%}">If-else</a></li>
-        <li><a href="{% url 'seconda_app:if_else_elif'%}">If-else-elif</a></li>
-        <li><a href="{% url 'seconda_app:es_for'%}">Ciclo for</a></li>
-      
+                          
+        {%block content%}    
+        <ol> 
+            <li><a href="{% url 'seconda_app:es_if'%}">If-else</a></li>
+            <li><a href="{% url 'seconda_app:if_else_elif'%}">If-else-elif</a></li>
+            <li><a href="{% url 'seconda_app:es_for'%}">Ciclo for</a></li>
+        </ol>
+        {%endblock content%}
 
 
-    </ol>
+    
 </body>
 </html>
