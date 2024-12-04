@@ -3,19 +3,17 @@ from prima_app.views import homepage
 from prima_app.views import welcome
 from prima_app.views import lista,chi_siamo,variabili,index
 from primo_progetto.views import index_root
-from seconda_app.views import es_if,if_else_elif
+
 
 app_name="prima_app"
 urlpatterns=[
-    path('index',index,name='index'),
-    path('homepage',homepage,name='homepage'),
-    path('welcome',welcome,name='welcome'),
-    path('lista',lista,name='lista'),
-    path('chi_siamo',chi_siamo,name='chi_siamo'),
-    path('variabili',variabili,name='variabili'),
-    path('index_root',index_root,name='index_root'),
-    path('es_if',es_if,name='es_if'),
-    path('if_else_elif',if_else_elif,name='if_else_elif')
+    path('prima_app/index',index,name='index'),
+    path('prima_app/homepage',homepage,name='homepage'),
+    path('prima_app/welcome',welcome,name='welcome'),
+    path('prima_app/lista',lista,name='lista'),
+    path('prima_app/chi_siamo',chi_siamo,name='chi_siamo'),
+    path('prima_app/variabili',variabili,name='variabili'),
+    path('prima_app/index_root',index_root,name='index_root'),
     
 ]
 
