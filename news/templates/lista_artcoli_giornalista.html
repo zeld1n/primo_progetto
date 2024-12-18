@@ -1,0 +1,26 @@
+{% extends "primo_progetto/base.html" %}
+
+{%block title%} {{block.super}} | Lista Articoli {%endblock title%}
+
+
+{%block content%}
+{%if tutto %}
+    <h4>Tutti gli Articoli</h4>
+{%else%}
+<h4>Articoli di un giornalista: </h4>
+{%endif%}
+{% if articoli %}
+{% for articolo in articoli%}
+            <p><strong>Titolo: </strong>  {{articolo.titolo}}  </p>
+            <p><strong>Contenuto: </strong> {{articolo.contenuto}}</p>
+            <p><strong>Autore: </strong> {{articolo.giornalista}}</p>
+            <hr>
+       
+    {% endfor %}
+    
+{%else%}
+<p><strong>Giornalista non esiste. </strong>
+{%endif%}
+    
+
+{%endblock content%}
