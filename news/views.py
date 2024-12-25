@@ -2,6 +2,8 @@ import datetime
 from django.shortcuts import render,get_object_or_404
 from django.http import HttpResponse
 from .models import Articolo,Giornalista
+from django.views.generic.detail import DetailView
+from django.views.generic.list import ListView
 
 # Create your views here.
 """
@@ -50,12 +52,16 @@ def home(request):
     return render(request,"home.html",context)
 
 
-def articoloDetailView(request,pk):
+"""def articoloDetailView(request,pk):
     #articolo = Articolo.objects.get(pk=pk)
     articolo=get_object_or_404(Articolo,pk=pk)
     context = {"articolo":articolo}
     return render(request,"articolo_detail.html",context)
+"""
 
+class articoloDetailViewCB(DetailView):
+    model = Articolo
+    template_name = "articolo_detail.html"
 
 def listaArticoli(request,pk=None):
     if(pk == None):
@@ -69,6 +75,19 @@ def listaArticoli(request,pk=None):
         'tutto':tutto
     }
     return render(request,'lista_artcoli_giornalista.html',context)
+
+"""
+class listaArticoli(ListView):
+    model = Articolo
+    template_name= "listaArticoli.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["articoli"]=Articolo.objects.all()
+        return context
+"""
+
+
 
 
 def queryBase(request):
@@ -117,6 +136,24 @@ def queryBase(request):
 
     #15 tutti gli articoli che contengono una certa parola nel titolo:
     articoli_parola= Articolo.objects.filter(titolo__icontains="importante")
+
+    #16 Articoli pubblicati in un certo mese di un anno specifico:
+    #nota per poter modificare la data di un articolo togliere la proprietà auto_now=True al field data nel model
+    #poi dare i comandi makemigrations e migrate per applicare le modifiche al database
+    articoli_mese_anno=Articolo.objects.filter(data__month=1, data__year=2023)
+
+    #17 Giornalisti con almeno un articolo con piu di 100 visualizzazioni 
+    giornalisti_con_articoli_popolari = Giornalista.objects.filter(articoli__visualizzazioni__gte=100).distinct()
+    """
+    spiegazione dettagliata:
+    Giornalista.objects:Inizia dalla classe del modello Giornalista.
+    .filter(articoli__visualizzazioni__gte=100):Utilizza il metodo filter() per filtrare i giornalisti 
+    in base al campo visualizzazioni nel modello Articolo. La notaziuone articoli__visualizzazioni indica
+    che si sta seguendo la relazione inversa dalla classe Giornalista alla classe Articolo attraverso 
+    il campo foreignKey giornalista nel modello Articolo.
+    .distinct(): E' un metodo assiccura che i risultati siano distintio, eliminando eventuali duplicati.
+    In questio 
+    """
 
     context={
         'articoli_cognome':articoli_cognome,
