@@ -59,6 +59,17 @@ def home(request):
     return render(request,"articolo_detail.html",context)
 """
 
+
+
+def giornalistaDetailView(request,pk):
+    #articolo = Articolo.objects.get(pk=pk)
+    articolo=get_object_or_404(Articolo,pk=pk)
+    context = {"articolo":articolo}
+    return render(request,"articolo_detail.html",context)
+
+
+
+
 class articoloDetailViewCB(DetailView):
     model = Articolo
     template_name = "articolo_detail.html"
@@ -74,7 +85,7 @@ def listaArticoli(request,pk=None):
         'articoli':articoli,
         'tutto':tutto
     }
-    return render(request,'lista_artcoli_giornalista.html',context)
+    return render(request,'lista_articoli_giornalista.html',context)
 
 """
 class listaArticoli(ListView):
@@ -152,8 +163,28 @@ def queryBase(request):
     che si sta seguendo la relazione inversa dalla classe Giornalista alla classe Articolo attraverso 
     il campo foreignKey giornalista nel modello Articolo.
     .distinct(): E' un metodo assiccura che i risultati siano distintio, eliminando eventuali duplicati.
-    In questio 
+    In questo caso, cio è utile perchè un giornalista potrebbe essere associato a più articoli che soddisfano
+    il criterio e vogliamo ottenere solo una volta ogni giornalista che ha scritto almeno un articolo popolare.
     """
+
+    data = datetime.date(1990,1,1)
+    visualizzazioni = 50
+    #Per mettere in AND le codnizioni separarle con la virgola
+    #18 scrivi quali articoli vengono selezionati
+    articoli_con_and = Articolo.objects.filter(giornalista__anno_di_nascita__gt=data, visualizzazioni__gte=visualizzazioni)
+
+    #Peer mettere in OR le condizioni utilizzare l'operatore Q
+    from django.db.models import Q
+    #19 ... scrivi quali articoli vengono selezionati
+
+    articoli_con_or = Articolo.objects.filter(Q(giornalista__anno_di_nascita__gt=data) | Q(visualizzazioni__lte=visualizzazioni))
+
+    #Per il NOT (~) utilizzare l'operatore Q
+    #20 scrivi quali articoli vengono selezionati
+    articoli_con_not = Articolo.objects.filter(~Q(giornalista__anno_di_nascita__lt=data))
+
+
+    articoli_con_not_exclude=Articolo.objects.exclude(giornalista__anno_di_nascita__lt=data)
 
     context={
         'articoli_cognome':articoli_cognome,
@@ -170,6 +201,17 @@ def queryBase(request):
         'giornalista_anziano':giornalista_anziano,
         'ultimi':ultimi,
         'articoli_minime_visualizzazioni':articoli_minime_visualizzazioni,
-        'articoli_parola':articoli_parola
+        'articoli_parola':articoli_parola,
+        'articoli_mese_anno':articoli_mese_anno,
+        'giornalisti_con_articoli_popolari':giornalisti_con_articoli_popolari,
+        'articoli_con_and':articoli_con_and,
+        'articoli_con_or':articoli_con_or,
+        'articoli_con_not':articoli_con_not,
+        'articoli_con_not_exclude':articoli_con_not_exclude
     }
     return render(request,'query_base.html',context)
+
+
+
+def index_news(request):
+    return render(request,"index_news.html")

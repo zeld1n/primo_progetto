@@ -37,9 +37,11 @@
                   Seconda app
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="{% url 'seconda_app:index_seconda_app'%}">Index</a>
                       <a class="dropdown-item" href="{% url 'seconda_app:es_if'%}">If</a>
                       <a class="dropdown-item" href="{% url 'seconda_app:if_else_elif'%}">If-Else-Elif</a>
                       <a class="dropdown-item" href="{% url 'seconda_app:es_for'%}">For</a>
+                      
                 </div>
               </li>
               <li class="nav-item dropdown">
@@ -47,6 +49,7 @@
                   News
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="{% url 'news:index_news'%}">Index</a>
                       <a class="dropdown-item" href="{% url 'news:home'%}">Homepage</a>
                       <a class="dropdown-item" href="{% url 'news:listaArticoli'%}">Articolo Lista</a>
                       <a class="dropdown-item" href="{% url 'news:query_base'%}">Query Base</a>
