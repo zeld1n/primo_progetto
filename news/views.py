@@ -121,16 +121,16 @@ def queryBase(request):
     articolo_piu_visualizzazto= Articolo.objects.order_by('-visualizzazioni').first()
 
     #7 Tutti i giornalisti nati dopo una certa data:
-    giornalisti_data=Giornalista.objects.filter(anno_di_nascita__gt=datetime.date.strptime(1990,1,1))
+    giornalisti_data=Giornalista.objects.filter(anno_di_nascita__gt=datetime.date(1990,1,1))
 
     #8 tutti gli articoli pubblicati in una data specifica:
-    articoli_del_giorno=Articolo.objects.filter(data=datetime.date.strptime(2023,1,1))
+    articoli_del_giorno=Articolo.objects.filter(data=datetime.date(2023,1,1))
     
     #9 tutti gli articoli pubblicati in un intervalo di date
-    articoli_periodo=Articolo.objects.filter(data__range=(datetime.date.strptime(2023,1,1),datetime.date.strptime(2023,12,31)))
+    articoli_periodo=Articolo.objects.filter(data__range=(datetime.date(2023,1,1),datetime.date(2023,12,31)))
 
     #10 gli articoli scritti da giornalisti nati prima del 1980:
-    giornalisti_nati=Giornalista.objects.filter(anno_di_nascita__lt=datetime.date.strptime(1980,1,1))
+    giornalisti_nati=Giornalista.objects.filter(anno_di_nascita__lt=datetime.date(1980,1,1))
     articoli_giornalisti=Articolo.objects.filter(giornalista__in=giornalisti_nati)
 
     #11 Giornalista piu giovane
@@ -167,7 +167,7 @@ def queryBase(request):
     il criterio e vogliamo ottenere solo una volta ogni giornalista che ha scritto almeno un articolo popolare.
     """
 
-    data = datetime.date.strptime(1990,1,1)
+    data = datetime.date(1990,1,1)
     visualizzazioni = 50
     #Per mettere in AND le codnizioni separarle con la virgola
     #18 scrivi quali articoli vengono selezionati

@@ -1,0 +1,26 @@
+{% extends 'primo_progetto/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View a</title>
+</head>
+<body>                  
+        {%block content%}    
+            <h1>Voti Studenti</h1>
+            {% for studente, materie in voti.items %}
+            <h2>{{ studente }}</h2>
+            <ul>
+                {% for materia, voto, assenze in materie %}
+                <li>{{ materia }}, {{ voto }}, {{ assenze }}</li>
+                {% endfor %}
+            </ul>
+            {% endfor %}
+        
+        {%endblock content%}
+
+
+    
+</body>
+</html>

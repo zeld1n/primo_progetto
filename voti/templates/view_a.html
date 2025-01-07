@@ -1,0 +1,22 @@
+{% extends 'primo_progetto/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View a</title>
+</head>
+<body>                  
+        {%block content%}    
+            <h1>Lista Materie</h1>
+            <ul>
+                {% for materia in materie %}
+                <li>{{ materia }}</li>
+                {% endfor %}
+            </ul>
+        {%endblock content%}
+
+
+    
+</body>
+</html>
