@@ -21,7 +21,6 @@ def es_for (request):
         'list1':[1, datetime.date(2024,11,27),"Do not give up!"],
         'list2':[2, datetime.date(2022,2,24),"Ciao come stai?"],
         'my_dict':{'chiave1': 'Valore 1', 'chiave2': 'Valore 2'}
-
     }
     return render(request,"es_for.html",context)
 

@@ -1,0 +1,31 @@
+
+{% extends "primo_progetto/base.html" %}
+
+{%block title%} {{block.super}} | View D {%endblock title%}
+
+       
+        {%block content%}
+        <h1>Verifiche: Risultati</h1>    
+        <ul>    
+                <li>Voto massimo: {{votomax}}</li>
+                    
+                {% for nome,materie in materieVotoMax.items %}
+                    <li>Materie con voto massimo: {% for mater in materie%} {{mater}}, {% endfor %} </li> 
+                {% endfor %}
+                
+                {% for nome,studenti in studenteVotoMax.items %}
+                    <li>Studenti con voto massimo: : {% for studente in studenti%} {{studente}}, {% endfor %} </li> 
+                {% endfor %}
+                <li>Voto minimo: {{votomin}}</li>
+                {% for nome,materie in materieVotoMin.items %}
+                    <li>Materie con voto minimo: {% for mater in materie%} {{mater}}, {% endfor %} </li> 
+                {% endfor %}
+                {% for nome,studenti in studenteVotoMin.items %}
+                    <li>Studenti con voto minimo: : {% for studente in studenti%} {{studente}}, {% endfor %} </li> 
+                {% endfor %}
+
+
+            </ul>   
+            
+                </ul>
+        {%endblock content%}

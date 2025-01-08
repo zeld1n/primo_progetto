@@ -1,12 +1,8 @@
-{% extends 'primo_progetto/base.html' %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>View a</title>
-</head>
-<body>                  
+{% extends "primo_progetto/base.html" %}
+
+{%block title%} {{block.super}} | View B {%endblock title%}
+
+       
         {%block content%}    
             <h1>Voti Studenti</h1>
             {% for studente, materie in voti.items %}
@@ -17,10 +13,4 @@
                 {% endfor %}
             </ul>
             {% endfor %}
-        
         {%endblock content%}
-
-
-    
-</body>
-</html>

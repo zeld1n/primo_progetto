@@ -1,5 +1,5 @@
 from django.urls import path
-from voti.views import view_a,view_b,view_c,index_voti
+from voti.views import view_a,view_b,view_c,index_voti,view_d
 
 
 
@@ -10,4 +10,5 @@ urlpatterns=[
     path("voti/view_a",view_a,name="view_a"),
     path("voti/view_b",view_b,name="view_b"),
     path("voti/view_c",view_c,name="view_c"),
+    path("voti/view_d",view_d,name="view_d"),
 ]
