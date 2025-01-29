@@ -1,0 +1,18 @@
+{% extends "primo_progetto/base.html" %}
+
+{%block title%} {{block.super}} | View B {%endblock title%}
+
+       
+        {%block content%}    
+            <h1>View B </h1>
+            <ul>
+                {% for eventioTitolo in eventiTitolo %}
+                   <p> Titolo: {{ eventioTitolo.titolo }}
+                    Data: {{eventioTitolo.data}}
+                    Descrizione: {{eventioTitolo.descrizione}}
+                    Partecipanti: {{eventioTitolo.partecipanti}} 
+                   </p>
+                   --------------------------------------------
+                {% endfor %}
+            </ul>
+        {%endblock content%}
