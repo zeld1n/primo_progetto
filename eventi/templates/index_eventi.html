@@ -4,15 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index Voti</title>
+    <title>Index Eventi </title>
 </head>
 <body>
                           
         {%block content%}    
         <ol> 
-            <li><a href="{% url 'voti:view_a' %}">Lista Materie</a></li>
-            <li><a href="{% url 'voti:view_b' %}">Voti Studenti</a></li>
-            <li><a href="{% url 'voti:view_c' %}">Media Studenti</a></li>
+            <li><a href="{% url 'eventi:vieweventi_a' %}">View a </a></li>
+            <li><a href="{% url 'eventi:vieweventi_b' %}">View b</a></li>
+            <li><a href="{% url 'eventi:vieweventi_c' %}">View c</a></li>
+            <li><a href="{% url 'eventi:vieweventi_d' %}">View d</a></li>
         </ol>
         {%endblock content%}
 
