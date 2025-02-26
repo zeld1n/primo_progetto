@@ -1,0 +1,24 @@
+{% extends "primo_progetto/base.html" %}
+
+{%block title%} {{block.super}} | View D {%endblock title%}
+
+       
+        {%block content%}    
+            <h1>View D</h1>
+            <ul>
+                {% for eventoCulturale in eventiCulturali %}
+                 <p> Titolo: {{ eventoCulturale.titolo }}
+                    <br>
+                    Descrizione: {{eventoCulturale.descrizione}}
+                    <br>
+                    Data inizio: {{eventoCulturale.data_inizio}}
+                    <br>
+                    Data fine: {{eventoCulturale.data_fine}}
+                    <br>
+                    Posti disponibili: {{eventoCulturale.posti_disponibili}}
+                    <br>
+                   </p>
+                   --------------------------------------------
+                {% endfor %}
+            </ul>
+        {%endblock content%}

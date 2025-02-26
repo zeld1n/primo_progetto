@@ -1,0 +1,44 @@
+{% extends "primo_progetto/base.html" %}
+
+{%block title%} {{block.super}} | View F {%endblock title%}
+
+       
+        {%block content%}    
+            <h1>View F</h1>
+            <ul>
+                <h3>Evento con il maggior numero di posti disponibili. </h3>
+                 <p> Titolo: {{ eventoMaggiorNumero.titolo }}
+                    <br>
+                    Descrizione: {{eventoMaggiorNumero.descrizione}}
+                    <br>
+                    Data inizio: {{eventoMaggiorNumero.data_inizio}}
+                    <br>
+                    Data fine: {{eventoMaggiorNumero.data_fine}}
+                    <br>
+                    Posti disponibili: {{eventoMaggiorNumero.posti_disponibili}}
+                    <br>
+                   </p>
+                   --------------------------------------------
+            </ul>
+
+            <ul>
+                <h3>Evento con il minor numero di posti disponibili. </h3>
+                 <p> Titolo: {{ eventoMinorNumero.titolo }}
+                    <br>
+                    Descrizione: {{eventoMinorNumero.descrizione}}
+                    <br>
+                    Data inizio: {{eventoMinorNumero.data_inizio}}
+                    <br>
+                    Data fine: {{eventoMinorNumero.data_fine}}
+                    <br>
+                    Posti disponibili: {{eventoMinorNumero.posti_disponibili}}
+                    <br>
+                   </p>
+                   --------------------------------------------
+            </ul>
+
+            <h3>Numero totale di posti disponibili per tutti gli eventi: {{NumeroTotaleDiPosti}}</h3>
+            -------------------------------------------------------------------------------------------------------------------
+
+
+        {%endblock content%}

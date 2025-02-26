@@ -1,0 +1,60 @@
+[
+    {
+        "model": "eventi_culturali.evento",
+        "pk": 1,
+        "fields": {
+            "titolo": "Festival della Letteratura",
+            "descrizione":"",
+            "data_inizio": "2025-04-05",
+            "data_fine": "2025-04-07",
+            "posti_disponibili":"100"
+        }
+    },
+    {
+        "model": "eventi_culturali.evento",
+        "pk": 2,
+        "fields": {
+            "titolo": "Mostra d'Arte Contemporanea",
+            "descrizione":"",
+            "data_inizio": "2025-05-12",
+            "data_fine": "2025-05-15",
+            "posti_disponibili":"50"
+        }
+    },
+    {
+        "model": "eventi_culturali.evento",
+        "pk": 3,
+        "fields": {
+            "titolo": "Concerto Jazz",
+            "descrizione":"",
+            "data_inizio": "2025-06-22",
+            "data_fine": "2025-06-22",
+            "posti_disponibili":"200"
+        }
+    },
+    {
+        "model": "eventi_culturali.evento",
+        "pk": 4,
+        "fields": {
+            "titolo": "Rassegna di Cinema d'Autore",
+            "descrizione":"",
+            "data_inizio": "2025-07-01",
+            "data_fine": "2025-07-05",
+            "posti_disponibili":"80"
+        }
+    },
+    {
+        "model": "eventi_culturali.evento",
+        "pk": 5,
+        "fields": {
+            "titolo": "Conferenza su Intelligenza Artificiale",
+            "descrizione":"",
+            "data_inizio": "2025-09-20",
+            "data_fine": "2025-09-20",
+            "posti_disponibili":"150"
+        }
+    }
+    
+
+]
+

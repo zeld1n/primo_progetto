@@ -27,5 +27,7 @@ urlpatterns = [
     path('',include("news.urls",namespace="news")),
     path('',include("voti.urls",namespace="voti")),
     path('',include("eventi.urls",namespace="eventi")),
+    path('',include("eventi_culturali.urls",namespace="eventi_culturali")),
+
 
 ]
