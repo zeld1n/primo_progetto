@@ -47,7 +47,7 @@ INSTALLED_APPS = [
     'voti',
     'eventi',
     'eventi_culturali'
-        
+
 ]
 
 MIDDLEWARE = [
@@ -87,10 +87,10 @@ WSGI_APPLICATION = 'primo_progetto.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'mydb',
-        'USER': 'django_user',
-        'PASSWORD': 'password123',
-        'HOST': 'localhost',
+        'NAME': 'chirilbogaiciuc$mydb',
+        'USER': 'chirilbogaiciuc',
+        'PASSWORD': 'Kira2105',
+        'HOST': 'chirilbogaiciuc.mysql.eu.pythonanywhere-services.com',
         'PORT': '3306',
     }
 }
