@@ -28,6 +28,8 @@ urlpatterns = [
     path('',include("voti.urls",namespace="voti")),
     path('',include("eventi.urls",namespace="eventi")),
     path('',include("eventi_culturali.urls",namespace="eventi_culturali")),
-    path('accounts/', include('django.contrib.auth.urls'))
+    path('accounts/', include('django.contrib.auth.urls')),
+    path('',include("forms_app.urls",namespace="forms_app")),
+
 
 ]
