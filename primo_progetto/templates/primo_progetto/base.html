@@ -109,7 +109,7 @@
             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             {{request.user.username}}
           </a>
-          <div class ="dropdown-menu" aria-lebelledby="navbarDropdown" style="margin-right:500px">
+          <div class ="dropdown-menu" aria-lebelledby="navbarDropdown" >
             <div class ="dropdown-divider"></div>
             <form id="logout-form" action="{% url 'logout' %}"method="post">
             {% csrf_token %}
