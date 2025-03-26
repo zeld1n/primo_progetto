@@ -46,7 +46,10 @@ INSTALLED_APPS = [
     'news',
     'voti',
     'eventi',
-    'eventi_culturali'
+    'eventi_culturali',
+    'forms_app',
+    'crispy_bootstrap4',
+    'crispy_forms'
 
 ]
 
@@ -65,7 +68,7 @@ ROOT_URLCONF = 'primo_progetto.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'prima_app/templates/prima_app'), os.path.join(BASE_DIR, 'primo_progetto/templates'),os.path.join(BASE_DIR, 'seconda_app/templates/seconda_app'),os.path.join(BASE_DIR, 'news/templates'),os.path.join(BASE_DIR, 'voti/templates'),os.path.join(BASE_DIR, 'eventi/templates'),os.path.join(BASE_DIR, 'eventi_culturali/templates') ],
+        'DIRS': [os.path.join(BASE_DIR, 'prima_app/templates/prima_app'), os.path.join(BASE_DIR, 'primo_progetto/templates'),os.path.join(BASE_DIR, 'seconda_app/templates/seconda_app'),os.path.join(BASE_DIR, 'news/templates'),os.path.join(BASE_DIR, 'voti/templates'),os.path.join(BASE_DIR, 'eventi/templates'),os.path.join(BASE_DIR, 'eventi_culturali/templates'),os.path.join(BASE_DIR, 'forms_app/templates') ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -84,6 +87,7 @@ WSGI_APPLICATION = 'primo_progetto.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+"""
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -94,7 +98,18 @@ DATABASES = {
         'PORT': '3306',
     }
 }
+"""
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'mydb',
+        'USER': 'django_user',
+        'PASSWORD': 'password123',
+        'HOST': 'localhost',
+        'PORT': '3306',
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
@@ -140,3 +155,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL = '/'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
