@@ -1,6 +1,7 @@
 from django.shortcuts import render,HttpResponse
 from .forms import FormContatto
 from django.shortcuts  import get_object_or_404,redirect
+from .models import Contatto
 
 from django.contrib.admin.views.decorators import staff_member_required
 
@@ -40,8 +41,12 @@ def contatti(request):
 
 
 def lista_contatti(request):
-     
-     return render (request,"lista_contatti.html")
+     contatti=Contatto.objects.all()
+     context={
+        "contatti":contatti
+
+     }
+     return render (request,"lista_contatti.html",context)
 
 
 @login_required(login_url="/accounts/login")
