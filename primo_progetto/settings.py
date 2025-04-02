@@ -49,7 +49,8 @@ INSTALLED_APPS = [
     'eventi_culturali',
     'forms_app',
     'crispy_bootstrap4',
-    'crispy_forms'
+    'crispy_forms',
+    'api'
 
 ]
 
@@ -68,7 +69,7 @@ ROOT_URLCONF = 'primo_progetto.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'prima_app/templates/prima_app'), os.path.join(BASE_DIR, 'primo_progetto/templates'),os.path.join(BASE_DIR, 'seconda_app/templates/seconda_app'),os.path.join(BASE_DIR, 'news/templates'),os.path.join(BASE_DIR, 'voti/templates'),os.path.join(BASE_DIR, 'eventi/templates'),os.path.join(BASE_DIR, 'eventi_culturali/templates'),os.path.join(BASE_DIR, 'forms_app/templates') ],
+        'DIRS': [os.path.join(BASE_DIR, 'prima_app/templates/prima_app'), os.path.join(BASE_DIR, 'primo_progetto/templates'),os.path.join(BASE_DIR, 'seconda_app/templates/seconda_app'),os.path.join(BASE_DIR, 'news/templates'),os.path.join(BASE_DIR, 'voti/templates'),os.path.join(BASE_DIR, 'eventi/templates'),os.path.join(BASE_DIR, 'eventi_culturali/templates'),os.path.join(BASE_DIR, 'forms_app/templates'), os.path.join(BASE_DIR, 'api/templates') ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
