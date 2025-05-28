@@ -1,12 +1,11 @@
-<!DOCTYPE html>
+{% extends "primo_progetto/base.html" %}
 
-<html>
-<head>
-        <title>Lista TODO</title>
-</head>
-<body>
-    <h1>Lista delle attività (TODO)</h1>
 
+        {%block title%} Lista TODO {%endblock title%} 
+
+
+    {%block content%}
+     <h1>Lista delle attività (TODO)</h1>
     {%if errore %}
         <p style="color:red;">{{errore}}</p>
     {%endif%}
@@ -24,5 +23,4 @@
     {%else%}
         <p>Nessun dato disponibile.</p>
     {%endif%}
-    </body>
-    </html>
+   {%endblock content%}
